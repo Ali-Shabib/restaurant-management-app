@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Order Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/">Home</a> |
+      <a href="/order.html">Order Form</a> |
+      <a href="/stats">Restaurant Stats</a>
+    </nav>
+    <hr />
+  </header>
+
+  <main class="container">
+    <h1>Restaurant Ordering System</h1>
+
+    <div class="topbar" style="display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:center;margin:0 0 12px;">
+      <label for="restaurants"><strong>Choose a restaurant:</strong>
+        <select id="restaurants">
+          <option value="">-- Select --</option>
+        </select>
+      </label>
+      <div id="minOrderNote" class="muted"></div>
+    </div>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>Categories</h2>
+        <div id="categories" class="items"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Menu</h2>
+        <div id="menu" class="items"></div>
+      </section>
+
+      <section class="panel summary">
+        <h2>Order Summary</h2>
+        <div id="cart">(cart is empty)</div>
+
+        <div id="totals">
+          <div><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+          <div><span>Estimated Tax (13%)</span><span id="tax">$0.00</span></div>
+          <div><span>Delivery Fee</span><span id="delivery">$0.00</span></div>
+          <div><strong>Estimated Total</strong><strong id="total">$0.00</strong></div>
+        </div>
+
+        <button id="submitOrder" class="btn" disabled style="margin-top:8px;">Submit Order</button>
+        <div id="submitHint" class="muted"></div>
+      </section>
+    </div>
+  </main>
+
+  <script src="client.js"></script>
+</body>
+</html>

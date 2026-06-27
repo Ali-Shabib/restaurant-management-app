@@ -1,0 +1,33 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Restaurant Statistics
+    link(rel="stylesheet", href="/style.css")
+  body
+    != headerHTML
+    main.container
+      h1 Restaurant Statistics
+      .card
+        if !entries || !entries.length
+          p.muted No orders yet. Use the Order Form to place one.
+        else
+          table.table
+            thead
+              tr
+                th Restaurant
+                th Total orders
+                th Average order total
+                th Most popular item
+            tbody
+              each e in entries
+                tr
+                  td #{e.name}
+                  td #{e.totalOrders}
+                  td $#{e.averageTotal.toFixed(2)}
+                  td #{e.mostPopular}
+      .card(style="margin-top:12px;text-align:center")
+        a.btn(href="/order.html") Open Order Form
+        |  
+        a.btn.btn-dark(href="/") Back Home
